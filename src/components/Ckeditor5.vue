@@ -51,20 +51,20 @@ export default {
     ckeditor: CKEditor.component
   },
   methods: {
-    onEditorReady( editor ) {
-      console.log( 'Editor is ready.', { editor } );
+    onEditorReady(eventInfo) {
+      console.log( 'Editor is ready.', { eventInfo })
     },
-    onEditorFocus( event, editor ) {
-      console.log( 'Editor focused.', { event, editor } );
+    onEditorFocus(eventInfo) {
+      console.log('Editor focused.', { eventInfo })
     },
-    onEditorBlur( event, editor ) {
-      console.log( 'Editor blurred.', { event, editor } );
+    onEditorBlur(eventInfo) {
+      console.log('Editor blurred.', { eventInfo })
     },
-    onEditorInput( data, event, editor ) {
-      console.log( 'Editor data input.', { event, editor, data } );
+    onEditorInput(eventInfo, batch) {
+      console.log('Editor data input.', { eventInfo, batch })
     },
-    onEditorDestroy( editor ) {
-      console.log( 'Editor destroyed.', { editor } );
+    onEditorDestroy(eventInfo) {
+      console.log('Editor destroyed.', { eventInfo })
     }
   }
 }
