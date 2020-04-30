@@ -36,8 +36,7 @@ export default {
           { name: 'insert', groups: [ 'insert' ] },
           { name: 'colors', groups: [ 'colors' ] },
           { name: 'about', groups: [ 'about' ] }
-        ],
-        // uploadUrl: '/apps/ckfinder/3.4.5/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
+        ]
       }
     }
   },
