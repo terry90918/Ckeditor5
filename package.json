@@ -1,5 +1,5 @@
 {
-  "name": "vue-ckeditor5",
+  "name": "vue-ckeditor",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -18,6 +18,7 @@
     "@ckeditor/ckeditor5-paragraph": "^18.0.0",
     "@ckeditor/ckeditor5-theme-lark": "^18.0.0",
     "@ckeditor/ckeditor5-vue": "^1.0.1",
+    "ckeditor4-vue": "^0.2.0",
     "core-js": "^3.6.4",
     "postcss-loader": "^3.0.0",
     "raw-loader": "^0.5.1",
