@@ -6,11 +6,13 @@
     @focus="onEditorFocus"
     @blur="onEditorBlur"
     @input="onEditorInput"
+    @fileUploadRequest="onFileUploadRequest"
+    @fileUploadResponse="onFileUploadResponse"
   />
 </template>
 
 <script>
-import CKEditor from 'ckeditor4-vue'
+import CKEditor from '@/utils/ckeditor4-vue'
 
 export default {
   name: 'Ckeditor4',
@@ -56,7 +58,28 @@ export default {
     },
     onEditorInput(evt) {
       console.log('Editor data input.', { evt })
-    }
+    },
+    onFileUploadRequest(evt) {
+      console.log('File Upload.', { evt })
+    },
+    onFileUploadResponse(evt) {
+      console.log('File Uploaded.', { evt })
+      evt.stop();
+
+      // Get XHR and response.
+      var data = evt.data,
+          xhr = data.fileLoader.xhr,
+          response = xhr.responseText.split( '|' );
+      const temp1 = JSON.parse(response);
+
+      if ( response[ 1 ] ) {
+        // An error occurred during upload.
+        data.message = response[ 1 ];
+        evt.cancel();
+      } else {
+        data.url = temp1.data.url;
+      }
+    },
   }
 }
 </script>
