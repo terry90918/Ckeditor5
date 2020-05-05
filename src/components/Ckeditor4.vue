@@ -80,6 +80,20 @@ export default {
       const response = xhr.responseText.split("|");
       const temp1 = JSON.parse(response);
 
+      /**
+       * @params temp1
+       *
+       * {
+       *   "success": true,
+       *   "msg": "",
+       *   "data": {
+       *     "fileName":"0-200x300.jpg",
+       *     "uploaded":1,
+       *     "url":"https:\/\/ckeditor.com\/apps\/ckfinder\/userfiles\/images\/0-200x300.jpg"
+       *   }
+       * }
+      */
+
       if (!temp1.success) {
         // An error occurred during upload.
         data.message = temp1.msg;
