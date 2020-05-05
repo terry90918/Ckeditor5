@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     onEditorReady(eventInfo) {
-      console.log( 'Editor is ready.', { eventInfo })
+      console.log('Editor is ready.', { eventInfo })
     },
     onEditorFocus(eventInfo) {
       console.log('Editor focused.', { eventInfo })

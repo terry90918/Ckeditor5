@@ -19,7 +19,7 @@ export default {
       editorData: '<p>Content of the editor.</p>',
       editorConfig: {
         extraPlugins: 'uploadimage',
-        filebrowserUploadUrl: 'http://localhost:8081/upload',
+        filebrowserUploadUrl: 'http://localhost:8079/upload',
         removeButtons: 'Subscript,Superscript,Styles,About,Blockquote,RemoveFormat,Source,Maximize,HorizontalRule,SpecialChar,Anchor,Scayt,Undo,Cut,Copy,Redo,Paste,PasteText,PasteFromWord',
         removeDialogTabs: 'image:Link;image:advanced;link:target;link:upload;link:advanced',
         toolbarGroups: [
@@ -36,7 +36,8 @@ export default {
           { name: 'insert', groups: [ 'insert' ] },
           { name: 'colors', groups: [ 'colors' ] },
           { name: 'about', groups: [ 'about' ] }
-        ]
+        ],
+        imageUploadUrl: 'http://localhost:8079/upload' // Adding drag and drop image upload.
       }
     }
   },
@@ -53,7 +54,7 @@ export default {
     onEditorBlur(evt) {
       console.log('Editor blurred.', { evt })
     },
-    onEditorInput(evt ) {
+    onEditorInput(evt) {
       console.log('Editor data input.', { evt })
     }
   }
